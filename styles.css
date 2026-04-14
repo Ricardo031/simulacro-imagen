@@ -9,6 +9,11 @@
 :root {
     --tittle: "Supermercado One", sans-serif;
     --paragraph: "Inter", sans-serif;
+
+    --color-park: #00792d;
+    --color-rest: #035497;
+    --color-rule: #d75050;
+    /* a70909 */
 }
 
 body {
@@ -20,6 +25,8 @@ nav {
     display: flex;
     justify-content: space-between;
     height: 5vh;
+    width: 100%;
+    padding: 0 1rem;
     background: #152282a3;
 }
 
@@ -50,7 +57,7 @@ nav {
     color: #f0f0f0;
     font-weight: 300;
     font-family: var(--tittle);
-    font-size: 18px;
+    font-size: 1.2rem;
 }
 
 .header-main {
@@ -58,7 +65,7 @@ nav {
     justify-content: center;
     align-items: center;
     margin: auto auto;
-    height: 45vh;
+    height: 70svh;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
         url(img/malecon-header.jpg);
     background-size: cover;
@@ -68,8 +75,10 @@ nav {
 .header-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
-    width: 60vh;
+    width: 60%;
     color: white;
 }
 
@@ -91,78 +100,160 @@ nav {
 
 }
 
-.paragraph {
-    font-size: 18px;
-    font-weight: 500;
+.content-paragaph {
+    max-width: 100ch;
+}
+
+.paragraph-header {
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
 /*% Main */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #f8f4eb;
+}
+
 .main-content {
     display: flex;
-    margin: 30px 12px;
-
+    margin: 2rem 1.25rem 0;
+    gap: 20px;
 }
 
 .Information {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 14px;
     color: #000000;
-    width: 40%;
+    width: 70vw;
 }
 
 #parques {
+    text-align: center;
     font-family: var(--tittle);
     font-weight: 600;
-    font-size: 32px;
-    color: #009b3a;
+    font-size: 2rem;
+    color: var(--color-park);
 }
 
-.info-import {
+.info-important {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
+    height: fit-content;
 }
 
-.horario-icon {
+.info-icon {
     display: flex;
-    color: #009b3a;
-
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
 }
 
 .text-info {
     font-family: var(--tittle);
     text-align: center;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 600;
+    color: var(--color-park);
+}
+
+/*% Park image */
+
+.park1 {
+    grid-area: park1;
+}
+
+.park2 {
+    grid-area: park2;
+}
+
+.park3 {
+    grid-area: park3;
 }
 
 .bento-box {
     display: grid;
-    grid-area: "";
-
-    gap: 20px;
-    width: 60%;
+    grid-template-areas: "park1 park1"
+        "park1 park1"
+        "park2 park3";
+    width: 100vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15vh 15vh 25vh;
+    gap: 0.9rem;
 }
 
 .img-park {
     width: 100%;
     object-fit: cover;
     border-radius: 12px;
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.park1 {
+/*% Restaurantes  */
 
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
+#restaurant {
+    text-align: center;
+    font-family: var(--tittle);
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--color-rest);
 }
 
-.park2 {
-    grid-column: 1 / 3;
+.rest {
+    color: var(--color-rest);
 }
 
-.park3 {
-    grid-column: 1 / 3;
+/*% Normas  */
+
+.rules-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #000000;
+    width: 80ch;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+#rules-title {
+    text-align: center;
+    font-family: var(--tittle);
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--color-rule);
+}
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    margin: 0 2rem;
+    gap: 1.25rem;
+}
+
+.rules-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background-color: #b9ffc5;
+    border-radius: 32px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title-rule {
+    font-family: var(--tittle);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--color-rule);
+    text-align: center;
 }
