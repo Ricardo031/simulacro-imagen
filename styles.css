@@ -11,9 +11,9 @@
     --paragraph: "Inter", sans-serif;
 
     --color-park: #00792d;
-    --color-rest: #035497;
-    --color-rule: #d75050;
-    /* a70909 */
+    --color-rest: #a70909;
+    --color-rule: #035497;
+    /* 035497 */
 }
 
 body {
@@ -27,7 +27,11 @@ nav {
     height: 5vh;
     width: 100%;
     padding: 0 1rem;
-    background: #152282a3;
+    background: #152282;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
 }
 
 .logo {
@@ -58,6 +62,13 @@ nav {
     font-weight: 300;
     font-family: var(--tittle);
     font-size: 1.2rem;
+    transition: background-color 0.3s ease-in-out;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.nav-li:hover {
+    background-color: #152282a3;
 }
 
 .header-main {
@@ -222,6 +233,7 @@ nav {
     margin: 0 auto 3rem;
     text-align: center;
 }
+
 #rules-title {
     text-align: center;
     font-family: var(--tittle);
@@ -241,7 +253,7 @@ nav {
 .rules-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     gap: 0.8rem;
     padding: 1rem;
